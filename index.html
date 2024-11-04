@@ -11,13 +11,19 @@
 
 <body>
   <header>
-    <img class="logo" src="./public/images/logo.png" alt="logo" />
+    <!-- di solito il logo è un link alla homepage -->
+    <a href="#home">
+      <img class="logo" src="./public/images/logo.png" alt="logo" />
+    </a>
+    <!-- menu si può usare al posto di ul, è più esplicativo -->
     <menu>
+      <!-- href="#" si usa come segnaposto se non ho ancora creato le pagine di destinazione -->
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Service</a></li>
       <li><a href="#">Contact</a></li>
     </menu>
+
     <form class="search">
       <input type="text" placeholder="Search...">
       <button id="search-btn">

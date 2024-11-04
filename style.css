@@ -7,17 +7,27 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px; /* valore di default: prova a cambiare per vedere che succede (tutti gli elementi si ridimensionano proporzionalmente) */
+}
+
 body {
   font-family: sans-serif;
+  /* la & sostituisce il selettore più in alto in questo caso body */
+  /* tolgo la sottolineatura da tutti link della pagina */
+  & a {
+    text-decoration: none;
+  }
 }
 /* fine reset */
 
 /* imposto un padding per tutte le sezioni della pagina */
 header {
-  padding: 1.25rem 5rem;
+  padding: 1.25rem 5rem; /* il rem è un'unità relativa: di default 1rem=16px. se voglio ridimensionare proporzionalmente tutti gli elementi della pagina basta che cambio il font-size nel tag html ad un unità diversa e tutti gli altri si adeguano in proporzione. Invece se si usano i px bisognerebbe cambiare tutti i valori in tutti gli elementi. (provare per credere). È comodo anche per cambiare le dimensioni dei font nel responsive */
 }
 /* fine */
 
+/* rendo i vari contenitori flessibili con allineamento verticale dei contenuti al centro */
 header,
 menu,
 .search {
@@ -25,59 +35,68 @@ menu,
   align-items: center;
 }
 
+/* 2 contenitori i cui elementi vanno a capo se restringo la finestra (responsive) e le distanze tra i loro elementi  */
 header,
 menu {
   flex-wrap: wrap;
   gap: 1rem 2rem;
 }
 
+/* gli elementi dell'header sono allineati orizzontalmente */
 header {
   justify-content: space-between;
   background-color: #e2a902;
+  color: white;
 
-  .logo {
+  & .logo {
     width: 10rem;
   }
 
-  menu {
+  /* tolgo i punti dell'elenco */
+  & menu {
     list-style: none;
     font-size: 1.1rem;
-    gap: 2rem;
 
-    a {
-      text-decoration: none;
-      color: white;
+    & a {
+      /* i link non ereditano automaticamente il colore dal parent quindi lo specifico */
+      color: inherit;
     }
   }
 
   .search {
-    padding: 1rem 1.2rem;
     height: 1.5rem;
+    font-size: 0.8rem;
+
+    /* la casella di ricerca */
     & input {
       border: none;
-      padding: 0.2rem;
+      padding: 0.25rem;
       background-color: #ffc502;
-      align-items: stretch;
       width: 6rem;
       color: white;
+      font-size: inherit;
 
+      /* la scritta che compare prima che inizio a digitare nella casella di ricerca (vedere anche l'html)*/
       &::placeholder {
-        color: inherit;
+        color: inherit; /*il colore viene ereditato da input */
+        font-size: inherit;
       }
 
+      /* tolgo la fastidiosa linea intorno quando seleziono la casella di ricerca per scriverci */
       &:focus,
       &:active {
         outline: none;
       }
     }
 
+    /* il bottone-immagine (lente) */
     & #search-btn {
       background-color: #04b3cb;
       border: none;
       width: 2rem;
       height: inherit;
       padding: 0 0.7rem;
-      cursor: pointer;
+      cursor: pointer; /* fa comparire la manina se passo sopra la lente col mouse */
 
       & img {
         width: 0.6rem;

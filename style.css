@@ -1,0 +1,87 @@
+/* reset di alcune proprietà di default del browser */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+/* fine reset */
+
+/* imposto un padding per tutte le sezioni della pagina */
+header {
+  padding: 1.25rem 5rem;
+}
+/* fine */
+
+header,
+menu,
+.search {
+  display: flex;
+  align-items: center;
+}
+
+header,
+menu {
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+header {
+  justify-content: space-between;
+  background-color: #e2a902;
+
+  .logo {
+    width: 10rem;
+  }
+
+  menu {
+    list-style: none;
+    font-size: 1.1rem;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .search {
+    padding: 1rem 1.2rem;
+    height: 1.5rem;
+    & input {
+      border: none;
+      padding: 0.2rem;
+      background-color: #ffc502;
+      align-items: stretch;
+      width: 6rem;
+      color: white;
+
+      &::placeholder {
+        color: inherit;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    & #search-btn {
+      background-color: #04b3cb;
+      border: none;
+      width: 2rem;
+      height: inherit;
+      padding: 0 0.7rem;
+      cursor: pointer;
+
+      & img {
+        width: 0.6rem;
+      }
+    }
+  }
+}

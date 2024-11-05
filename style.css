@@ -23,7 +23,8 @@ body {
 
 /* imposto un padding per tutte le sezioni della pagina */
 header,
-.hero {
+.hero,
+.lover {
   padding: 1.25rem 5rem; /* il rem è un'unità relativa: di default 1rem=16px. se voglio ridimensionare proporzionalmente tutti gli elementi della pagina basta che cambio il font-size nel tag html ad un unità diversa e tutti gli altri si adeguano in proporzione. Invece se si usano i px bisognerebbe cambiare tutti i valori in tutti gli elementi. (provare per credere). È comodo anche per cambiare le dimensioni dei font nel responsive */
 }
 /* fine */
@@ -107,60 +108,105 @@ header {
 }
 
 /* di solito la sezione del titolo con immagine viene chiamata "hero" */
-.hero {
+.hero,
+.lover {
   display: flex;
-  background-color: #ffc502;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  color: white;
-  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+
+  & img {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /* per centrare verticalmente la parte sinistra uso flex */
-  .description {
+}
+
+.hero {
+  background-color: #ffc502;
+  color: white;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+  gap: 1rem;
+
+  & h1 {
+    font-size: 2.8rem;
+  }
+
+  & p {
+    margin-bottom: 2rem;
+  }
+
+  .actions {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 55%;
+    gap: 2rem;
 
-    & h1 {
-      font-size: 2.8rem;
-    }
+    & .btn {
+      padding: 0.6rem 1rem;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
 
-    & p {
-      margin-bottom: 2rem;
-    }
-
-    .actions {
-      display: flex;
-      gap: 2rem;
-
-      & .btn {
-        padding: 0.6rem 1rem;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-
-        &.btn-green {
-          background-color: #04b3cb;
-          border: none;
-          &:hover {
-            /* piccolo trucco per l'effetto hover: cambio solo un carattere */
-            background-color: #04c3cb;
-          }
+      &.btn-green {
+        background-color: #04b3cb;
+        border: none;
+        &:hover {
+          /* piccolo trucco per l'effetto hover: cambio solo un carattere */
+          background-color: #04c3cb;
         }
-        &.btn-empty {
-          background-color: transparent;
-          border: 2px solid white;
-          &:hover {
-            /* piccolo trucco per l'effetto hover: cambio solo un carattere */
-            background-color: #ffd502;
-          }
+      }
+      &.btn-yellow {
+        background-color: #ffc502;
+        border: 2px solid white;
+        &:hover {
+          background-color: #ffd502;
         }
       }
     }
   }
+}
+
+.lover {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  & .image-filtered {
+    width: 35%;
+    aspect-ratio: 1;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffc50288;
+      z-index: 10;
+    }
+  }
 
   & img {
-    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  & .video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    transform: translate(-50%, -50%);
   }
 }

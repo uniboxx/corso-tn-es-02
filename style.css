@@ -265,6 +265,9 @@ header {
     }
   }
 }
-.lover2 .actions {
-  justify-content: end;
+.lover2 {
+  text-align: end;
+  & .actions {
+    justify-content: end;
+  }
 }

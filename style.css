@@ -21,11 +21,27 @@ body {
 }
 /* fine reset */
 
-/* imposto un padding per tutte le sezioni della pagina */
-header,
-.hero,
-.lover {
+h1 {
+  font-size: 2.8rem;
+}
+h2 {
+  font-size: 2.3rem;
+}
+p {
+  font-size: 1.2rem;
+}
+
+header {
   padding: 1.25rem 5rem; /* il rem è un'unità relativa: di default 1rem=16px. se voglio ridimensionare proporzionalmente tutti gli elementi della pagina basta che cambio il font-size nel tag html ad un unità diversa e tutti gli altri si adeguano in proporzione. Invece se si usano i px bisognerebbe cambiare tutti i valori in tutti gli elementi. (provare per credere). È comodo anche per cambiare le dimensioni dei font nel responsive */
+}
+
+/* imposto un padding per tutte le sezioni della pagina */
+
+.hero,
+.lover,
+.cards-container,
+.lover2 {
+  padding: 4rem;
 }
 /* fine */
 
@@ -109,10 +125,9 @@ header {
 
 /* di solito la sezione del titolo con immagine viene chiamata "hero" */
 .hero,
-.lover {
+.lover,
+.lover2 {
   display: flex;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   justify-content: space-between;
   align-items: center;
 
@@ -136,13 +151,10 @@ header {
   justify-content: center;
   width: 60%;
   gap: 1rem;
-
-  & h1 {
-    font-size: 2.8rem;
-  }
+  padding: 3rem 0;
 
   & p {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .actions {
@@ -174,16 +186,12 @@ header {
   }
 }
 
-.lover {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
-  & h2 {
-    font-size: 2.3rem;
-  }
+.lover,
+.lover2 {
+  gap: 4rem;
 
   & .image-filtered {
-    width: 35%;
+    width: 40%;
     aspect-ratio: 1;
     position: relative;
 
@@ -213,4 +221,50 @@ header {
     height: 3rem;
     transform: translate(-50%, -50%);
   }
+}
+
+.cards-container {
+  background-color: #ffc502;
+  color: white;
+  padding-bottom: 2rem;
+
+  & h1,
+  p {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin-bottom: 4rem;
+  }
+
+  & .cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    & .card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      & img {
+        width: 100%;
+      }
+
+      & h3 {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      & p {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+.lover2 .actions {
+  justify-content: end;
 }

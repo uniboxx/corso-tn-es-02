@@ -22,7 +22,8 @@ body {
 /* fine reset */
 
 /* imposto un padding per tutte le sezioni della pagina */
-header {
+header,
+.hero {
   padding: 1.25rem 5rem; /* il rem è un'unità relativa: di default 1rem=16px. se voglio ridimensionare proporzionalmente tutti gli elementi della pagina basta che cambio il font-size nel tag html ad un unità diversa e tutti gli altri si adeguano in proporzione. Invece se si usano i px bisognerebbe cambiare tutti i valori in tutti gli elementi. (provare per credere). È comodo anche per cambiare le dimensioni dei font nel responsive */
 }
 /* fine */
@@ -102,5 +103,64 @@ header {
         width: 0.6rem;
       }
     }
+  }
+}
+
+/* di solito la sezione del titolo con immagine viene chiamata "hero" */
+.hero {
+  display: flex;
+  background-color: #ffc502;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: white;
+  gap: 4rem;
+
+  /* per centrare verticalmente la parte sinistra uso flex */
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+
+    & h1 {
+      font-size: 2.8rem;
+    }
+
+    & p {
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 2rem;
+
+      & .btn {
+        padding: 0.6rem 1rem;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &.btn-green {
+          background-color: #04b3cb;
+          border: none;
+          &:hover {
+            /* piccolo trucco per l'effetto hover: cambio solo un carattere */
+            background-color: #04c3cb;
+          }
+        }
+        &.btn-empty {
+          background-color: transparent;
+          border: 2px solid white;
+          &:hover {
+            /* piccolo trucco per l'effetto hover: cambio solo un carattere */
+            background-color: #ffd502;
+          }
+        }
+      }
+    }
+  }
+
+  & img {
+    width: 35%;
   }
 }

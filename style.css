@@ -293,6 +293,7 @@ header {
 .cards-container.vet-teams {
   background-color: white;
   color: black;
+  margin-bottom: 0;
 
   & h3,
   h4,
@@ -322,6 +323,66 @@ header {
     .socials img {
       width: 1.5rem;
       height: 1.5rem;
+    }
+  }
+}
+
+.statistics {
+  position: relative;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #ffc501cc;
+    z-index: 10;
+    /* da verificare lo scalino in fondo */
+  }
+
+  & .cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      & .icon {
+        width: 3rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+
+        & img {
+          height: 3rem;
+          width: auto;
+          object-fit: cover;
+        }
+      }
+
+      & .info {
+        text-align: center;
+      }
     }
   }
 }

@@ -41,7 +41,7 @@ header {
 .lover,
 .cards-container,
 .lover2 {
-  padding: 4rem;
+  padding: 64px;
 }
 /* fine */
 
@@ -57,7 +57,7 @@ menu,
 header,
 menu {
   flex-wrap: wrap;
-  gap: 1rem 2rem;
+  gap: 16px 32px;
 }
 
 /* gli elementi dell'header sono allineati orizzontalmente */
@@ -313,6 +313,15 @@ header {
       width: 2rem;
       height: 2rem;
       object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    padding: 32px 5px;
+
+    .socials img {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 }

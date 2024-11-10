@@ -289,3 +289,30 @@ header {
     transform: translateY(-50%);
   }
 }
+
+.cards-container.vet-teams {
+  background-color: white;
+  color: black;
+
+  & h3,
+  h4,
+  p {
+    text-align: center;
+  }
+
+  & h4 {
+    font-weight: normal;
+  }
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    & img {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+    }
+  }
+}

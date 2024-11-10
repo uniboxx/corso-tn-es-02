@@ -156,34 +156,36 @@ header {
   & p {
     margin-bottom: 1rem;
   }
+}
+.actions {
+  display: flex;
+  gap: 2rem;
 
-  .actions {
-    display: flex;
-    gap: 2rem;
+  & .btn {
+    padding: 0.6rem 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 
-    & .btn {
-      padding: 0.6rem 1rem;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-
-      &.btn-green {
-        background-color: #04b3cb;
-        border: none;
-        &:hover {
-          /* piccolo trucco per l'effetto hover: cambio solo un carattere */
-          background-color: #04c3cb;
-        }
+    &.btn-green {
+      background-color: #04b3cb;
+      border: none;
+      &:hover {
+        /* piccolo trucco per l'effetto hover: cambio solo un carattere */
+        background-color: #04c3cb;
       }
-      &.btn-yellow {
-        background-color: #ffc502;
-        border: 2px solid white;
-        &:hover {
-          background-color: #ffd502;
-        }
+    }
+    &.btn-yellow {
+      background-color: #ffc502;
+      border: 2px solid white;
+      &:hover {
+        background-color: #ffd502;
       }
     }
   }
+}
+.cards-container.dogs .actions {
+  justify-content: center;
 }
 
 .lover,
@@ -269,5 +271,21 @@ header {
   text-align: end;
   & .actions {
     justify-content: end;
+  }
+}
+
+.line-through {
+  position: relative;
+  padding: 0 5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
   }
 }
